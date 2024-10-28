@@ -1,0 +1,32 @@
+[package]
+name = "pump-fun"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "pump_fun"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = "0.29.0"
+anchor-spl = "0.29.0"
+num-derive = "0.4.2"
+solana-program = "2.0.2"
+thiserror = "1.0.30"
+spl-math = { version = "0.2.0", features = ["no-entrypoint"] }
+arrayref = "0.3.6"
+raydium-cp-swap = { git = "https://github.com/raydium-io/raydium-cp-swap", features = [
+    "no-entrypoint",
+    "cpi",
+] }
+
+[dev-dependencies]
+proptest = "1.0.0"
